@@ -3,17 +3,16 @@ export const homeObjOne = {
   lightBg: true,
   lightText: false,
   lightTextDesc: false,
-  topLine: 'Premium Bank',
-  headline: 'Unlimited Transactions with zero fess',
-  description: 'Get access to our exclusive app that allows you to send unlimited transactions without getting charged any fees.',
-  buttonLabel: 'Get started',
-  imgStart: false,
-  img: require('../../images/svg-1.svg'),
+  topLine: '',
+  headline: 'Prazer, Daniel Moura.',
+  description: 'Criador do JardimReal, paisagista, amante do design biofílico, especialista em Jardins Verticais de Alto Padrão. Conecto pessoas à natureza, promovendo bem-estar físico e mental, garantindo exatidão e excelência de forma única à cada cliente.',
+  buttonLabel: 'PEÇA UM ORÇAMENTO',
+  imgStart: true,
+  img: require('../../images/img-about.png'),
   alt: 'Car',
   dark: false,
   primary: false,
   darkText: true,
-
 };
 
 export const homeObjTwo = {

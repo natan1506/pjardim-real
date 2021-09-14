@@ -1,10 +1,11 @@
-import React, { useRef, useState } from 'react';
-import { useEffect } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Button } from '../ButtonElement';
+import ImgBgMobile from '../../images/img2.jpeg';
 
 import {
   CarouselContainer,
   CarouselBg,
+  ImgBg,
   CarouselItem,
   CarouselContent,
   CarouselH1,
@@ -12,10 +13,23 @@ import {
   CarouselBtnWrapper
 } from './CarouselElemtens';
 
+function getWindowDimensions() {
+  const { innerWidth: width } = window;
+  return width
+}
+
+
+
 function Carousel() {
   const carouselRef = useRef(null);
   const [hover, setHover] = useState(false);
+  const [size, setSize] = useState(getWindowDimensions());
 
+  const updateSize = () => {console.log(window.innerWidth)
+    setSize(window.innerWidth)
+  }
+  
+  window.addEventListener('resize', (e)=> {updateSize()});
 
   const onHover = () => {
     setHover(!hover);
@@ -25,6 +39,7 @@ function Carousel() {
     items: [
       { id: 1, img: require('../../images/img1.jpeg') },
       { id: 2, img: require('../../images/img2.jpeg') },
+      { id: 3, img: require('../../images/img3.jpeg') },
     ]
   }
 
@@ -44,9 +59,9 @@ function Carousel() {
 
 
   return (
-
     <CarouselContainer id="home">
-      <CarouselBg
+      {size >= 768 ? (
+        <CarouselBg
         ref={carouselRef}
         onPrevStart={onPrevStart}
         onNextStart={onNextStart}
@@ -55,14 +70,20 @@ function Carousel() {
         autoPlaySpeed={4000}
         pagination={false}
 
-      >
-        {state.items.map(item => <CarouselItem key={item.id}><img src={item.img.default} alt={item.id} /></CarouselItem>)}
-      </CarouselBg>
+        >
+          {state.items.map(item => <CarouselItem key={item.id}><img src={item.img.default} alt={item.id} /></CarouselItem>)}
+        </CarouselBg>
+      )
+      :
+      (
+        <ImgBg src={ImgBgMobile}/>
+      )
+    }
       <CarouselContent>
-        <CarouselH1>Virtual Banking Made Easy</CarouselH1>
-        <CarouselP>
-          Sign uo for a new account today and receive $250 in credit towards your next payment.
-        </CarouselP>
+        <CarouselH1> Orçamento personalizado em até 24h</CarouselH1>
+        {/* <CarouselP>
+          Orçamento personalizado em até 24h
+        </CarouselP> */}
         <CarouselBtnWrapper>
           <Button
             to="signup"
@@ -76,7 +97,7 @@ function Carousel() {
             exact='true'
             offset={-80}
           >
-            Get started
+            PEÇA AGORA
           </Button>
         </CarouselBtnWrapper>
       </CarouselContent>

@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from '../ButtonElement';
+
+import backgroundAbout from '../../images/bg-about.jpeg';
 
 import { 
   InfoContainer, 
@@ -30,12 +32,13 @@ const InfoSection = ({
   alt, 
   primary, 
   dark, 
-  dark2 
+  dark2,
 }) => {
 
   return (
     <>
-      <InfoContainer lightBg={lightBg} id={id}>
+      <InfoContainer id={id} backgroundImageCustom={id === 'about' ? backgroundAbout : false}
+      >
         <InfoWrapper>
           <InfoRow imgStart={imgStart}>
             <Column1>

@@ -2,7 +2,9 @@ import styled from 'styled-components';
 
 export const InfoContainer = styled.div`
   color: #fff;
+
   background: ${({lightBg}) => (lightBg ? '#f9f9f9' : '#010606')};
+  background: url(${props => props.backgroundImageCustom});
 
   @media screen and (max-width: 768px) {
     padding: 100px 0;
@@ -23,6 +25,7 @@ export const InfoWrapper = styled.div`
 
 export const InfoRow = styled.div`
   display: grid;
+  height: 100%;
   grid-auto-columns: minmax(auto, 1fr);
   align-items: center;
   grid-template-areas: ${({imgStart}) => imgStart ? `'col2 col1'` : `'col1 col2'`};
@@ -75,8 +78,13 @@ export const Heading = styled.h1`
 export const Subtitle = styled.p`
   max-width: 440px;
   margin-bottom: 35px;
-  font-size: 18px;
-  line-height: 24px;
+  font-size: 25px;
+  line-height: 30px;
+
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+    line-height: 24px;
+  }
   color: ${({darkText}) => (darkText ? '#010606' : '#fff')};
 `;
 

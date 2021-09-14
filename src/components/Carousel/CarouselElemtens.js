@@ -18,7 +18,7 @@ export const CarouselContainer = styled.div`
     height: 529px;
   }
   @media screen and (max-width: 770px){
-    height: 300px;
+    height: 400px;
   }
 `;
 
@@ -29,7 +29,7 @@ export const CarouselBg = styled(Carousel)`
   right: 0;
   bottom: 0;
   left: 0;
-  width: 100%;
+  /* width: 100%; */
   height: 100%;
   overflow: hidden;
 
@@ -71,10 +71,14 @@ export const CarouselBg = styled(Carousel)`
     margin: 0;
   }
 
-  
   .rec-carousel-item:focus {
     height: 100%;
   }
+`;
+
+export const ImgBg = styled.img`
+  width: 100%;
+  height: 100%;
 `;
 
 
@@ -83,9 +87,16 @@ export const CarouselItem = styled.div`
   height: 100%;
 
   img {
-    width: 100%;
-    height: 100%;
+    min-width: 100%;
+    min-height: 844px;
     overflow: hidden;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    img {
+      overflow: hidden;
+    }
   }
 
 `;
@@ -107,7 +118,6 @@ export const CarouselContent = styled.div`
   }
 
   @media screen and (max-width: 768px) {
-    top: 80px;
     padding: 4px 10px;
   }
 `;
