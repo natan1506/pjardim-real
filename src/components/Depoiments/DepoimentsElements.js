@@ -1,15 +1,19 @@
 import styled from 'styled-components';
 
 export const DepoimentsContainer = styled.div`
-  height: 800px;
+  background: url(${props => props.backgroundImageCustom});
+  background-position: center;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  height: auto;
+  padding: 100px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #010606;
 
-  @media screen and (max-width: 768px) {
-    height: 1100px;
+  @media screen and (max-width: 985px) {
+    padding: 80px 20px;
   }
 
   @media screen and (max-width: 480px) {
@@ -32,22 +36,21 @@ export const DepoimentsWrapper = styled.div`
 
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
+    width: 100%;
     padding: 0 20px;
   }
 `;
 
 export const DepoimentsCard = styled.div`
-  background: #fff;
+  width: auto;
   height: 330px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  align-items: center;
   border-radius: 10px;
   max-height: 340px;
   padding: 30px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   transition: all 0.2s ease-in-out;
 
   &:hover {
@@ -58,8 +61,8 @@ export const DepoimentsCard = styled.div`
 `;
 
 export const DepoimentsIcon = styled.img`
-  height: 160px;
-  width: 160px;
+  height: 100px;
+  width: 100px;
   margin-bottom: 10px;
 `;
 
@@ -74,12 +77,24 @@ export const DepoimentsH1 = styled.h1`
 `;
 
 export const DepoimentsH2 = styled.h2`
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-Top: 10px;
+  color: rgb(112 ,130, 219);
+  white-space: nowrap;
+`;
+
+export const DepoimentsH5 = styled.p`
   font-size: 1rem;
   margin-bottom: 10px;
   margin-Top: 10px;
+  color: rgb(149, 165, 175);
 `;
+
 
 export const DepoimentsP = styled.p`
   font-size: 1rem;
   text-align: center;
+  color: rgb(149, 165, 175);
 `;

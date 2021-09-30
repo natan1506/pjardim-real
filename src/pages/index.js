@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import Navbar from '../components/Navbar'
 import Sidebar from '../components/Sidebar'
-import HeroSection from '../components/HeroSection'
 import InfoSection from '../components/InfoSection'
-import { homeObjOne, homeObjTwo, homeObjThree } from '../components/InfoSection/Data'
+import { homeObjOne } from '../components/InfoSection/Data'
 import Services from '../components/Services'
 import Footer from '../components/Footer'
 import Carousel from '../components/Carousel'
+import Contact from '../components/Contact'
 import Depoiments from '../components/Depoiments'
-
+import Quotation from '../components/Quotation'
+import Projects from '../components/Projects'
+import { Content } from './styles'
+ 
 const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -17,18 +20,18 @@ const Home = () => {
   }
 
   return (
-    <>
+    <Content>
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <Navbar toggle={toggle} />
       <Carousel />
-      {/* <HeroSection /> */}
       <InfoSection {...homeObjOne} />
-      <InfoSection {...homeObjTwo} />
       <Services />
+      <Projects />
       <Depoiments />
-      <InfoSection {...homeObjThree} />
+      <Quotation />
+      <Contact />
       <Footer />
-    </>
+    </Content>
   )
 }
 

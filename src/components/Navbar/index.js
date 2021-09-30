@@ -11,7 +11,6 @@ import {
   NavItem,
   NavLinks,
   NavBtn,
-  NavBtnLink
 } from './NavbarElements';
 
 const Navbar = ({ toggle }) => {
@@ -39,7 +38,7 @@ const Navbar = ({ toggle }) => {
       <IconContext.Provider value={{ color: '#fff' }}>
         <Nav scrollNav={scrollNav}>
           <NavbarContainer>
-            <NavLogo to="/" onClick={toggleHome}>bank</NavLogo>
+            <NavLogo to="/" onClick={toggleHome}>logo</NavLogo>
             <MobileIcon onClick={toggle}>
               <FaBars />
             </MobileIcon>
@@ -58,18 +57,6 @@ const Navbar = ({ toggle }) => {
               </NavItem>
               <NavItem>
                 <NavLinks
-                  to="discover"
-                  smooth={true}
-                  duration={500}
-                  spy={true}
-                  exact='true'
-                  offset={-80}
-                >
-                  Orçamentos
-                </NavLinks>
-              </NavItem>
-              <NavItem>
-                <NavLinks
                   to="services"
                   smooth={true}
                   duration={500}
@@ -82,7 +69,43 @@ const Navbar = ({ toggle }) => {
               </NavItem>
               <NavItem>
                 <NavLinks
-                  to="signup"
+                  to="projects"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact='true'
+                  offset={-80}
+                >
+                  Projetos
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to="depoiments"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact='true'
+                  offset={-80}
+                >
+                  Depoimentos
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to="quotation"
+                  smooth={true}
+                  duration={500}
+                  spy={true}
+                  exact='true'
+                  offset={-80}
+                >
+                  Orçamentos
+                </NavLinks>
+              </NavItem>
+              <NavItem>
+                <NavLinks
+                  to="contact"
                   smooth={true}
                   duration={500}
                   spy={true}
@@ -94,7 +117,6 @@ const Navbar = ({ toggle }) => {
               </NavItem>
             </NavMenu>
             <NavBtn>
-              {/* <NavBtnLink to="/signin">Sign In</NavBtnLink> */}
             </NavBtn>
           </NavbarContainer>
         </Nav>

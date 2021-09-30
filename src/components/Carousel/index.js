@@ -1,6 +1,6 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import { Button } from '../ButtonElement';
-import ImgBgMobile from '../../images/img2.jpeg';
+import ImgBgMobile from '../../images/img3.jpeg';
 
 import {
   CarouselContainer,
@@ -9,7 +9,6 @@ import {
   CarouselItem,
   CarouselContent,
   CarouselH1,
-  CarouselP,
   CarouselBtnWrapper
 } from './CarouselElemtens';
 
@@ -25,7 +24,7 @@ function Carousel() {
   const [hover, setHover] = useState(false);
   const [size, setSize] = useState(getWindowDimensions());
 
-  const updateSize = () => {console.log(window.innerWidth)
+  const updateSize = () => {
     setSize(window.innerWidth)
   }
   
@@ -57,19 +56,28 @@ function Carousel() {
     }
   };
 
+  const totalPages = Math.ceil(state.items.length)
+  let resetTimeout;
 
   return (
     <CarouselContainer id="home">
       {size >= 768 ? (
         <CarouselBg
-        ref={carouselRef}
-        onPrevStart={onPrevStart}
-        onNextStart={onNextStart}
-        disableArrowsOnEnd={false}
-        enableAutoPlay
-        autoPlaySpeed={4000}
-        pagination={false}
-
+          ref={carouselRef}
+          onPrevStart={onPrevStart}
+          onNextStart={onNextStart}
+          disableArrowsOnEnd={false}
+          enableAutoPlay
+          autoPlaySpeed={4000}
+          pagination={false}
+          onNextEnd={({ index }) => {
+            clearTimeout(resetTimeout)
+            if (index + 1 === totalPages) {
+              resetTimeout = setTimeout(() => {
+                  carouselRef.current.goTo(0)
+              }, 4000) // same time
+            }
+          }}
         >
           {state.items.map(item => <CarouselItem key={item.id}><img src={item.img.default} alt={item.id} /></CarouselItem>)}
         </CarouselBg>
@@ -80,13 +88,10 @@ function Carousel() {
       )
     }
       <CarouselContent>
-        <CarouselH1> Orçamento personalizado em até 24h</CarouselH1>
-        {/* <CarouselP>
-          Orçamento personalizado em até 24h
-        </CarouselP> */}
+        <CarouselH1>Projetos personalizado <br /> em até 24h</CarouselH1>
         <CarouselBtnWrapper>
           <Button
-            to="signup"
+            to="quotation"
             onMouseEnter={onHover}
             onMouseLeave={onHover}
             primary='true'

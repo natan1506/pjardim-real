@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '../ButtonElement';
 
 import backgroundAbout from '../../images/bg-about.jpeg';
@@ -47,7 +47,7 @@ const InfoSection = ({
                 <Heading lightText={lightText}>{headline}</Heading>
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
-                  <Button to='home' 
+                  <Button to='quotation' 
                     smooth={true}
                     duration={500}
                     spy={true}

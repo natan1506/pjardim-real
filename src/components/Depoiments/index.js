@@ -1,45 +1,51 @@
 import React from 'react';
-import Icon1 from '../../images/svg-1.svg';
-import Icon2 from '../../images/svg-2.svg';
-import Icon3 from '../../images/svg-5.svg';
+import Aspas from '../../images/aspas.png';
+import backgroundDepoiments from '../../images/bg-depoiments.jpeg';
 
 import {
   DepoimentsContainer,
-  DepoimentsH1,
   DepoimentsWrapper,
   DepoimentsCard,
   DepoimentsIcon,
   DepoimentsH2,
+  DepoimentsH5,
   DepoimentsP
-} from './DeppoimentsElements';
+} from './DepoimentsElements';
 
 const Depoiments = () => {
   return (
-    <DepoimentsContainer id="Depoiments">
-      <DepoimentsH1>Depoimentos</DepoimentsH1>
-      <DepoimentsWrapper>
-        <DepoimentsCard>
-          <DepoimentsP>
-            We help reduce your fess and increase your overall revenue.
-          </DepoimentsP>
-          <DepoimentsH2>Reduce expenses</DepoimentsH2>
-        </DepoimentsCard>
-        <DepoimentsCard>
-          <DepoimentsIcon src={Icon2} />
-          <DepoimentsH2>Virtual Offices</DepoimentsH2>
-          <DepoimentsP>
-            You can access our platform online anywhere in the world.
-          </DepoimentsP>
-        </DepoimentsCard>
-        <DepoimentsCard>
-          <DepoimentsIcon src={Icon3} />
-          <DepoimentsH2>Premium Benefits</DepoimentsH2>
-          <DepoimentsP>
-            Unlock our special membership card that returns 5% cash back.
-          </DepoimentsP>
-        </DepoimentsCard>
-      </DepoimentsWrapper>
-    </DepoimentsContainer>
+    <div id="depoiments">
+      <DepoimentsContainer backgroundImageCustom={backgroundDepoiments}>
+        <DepoimentsWrapper>
+          <DepoimentsCard>
+            <DepoimentsP>
+              Conheci o Daniel pela internet e todo o contato foi online.Ele foi etremamente dedicado para conseguir o resultado que eu esperava.
+              Fiquei meuito satisfeita com tudo.Obrigada
+            </DepoimentsP>
+            <DepoimentsIcon src={Aspas} />
+            <DepoimentsH2>Ilda Machado, SP</DepoimentsH2>
+            <DepoimentsH5>Consultoria Online</DepoimentsH5>
+          </DepoimentsCard>
+          <DepoimentsCard>
+            <DepoimentsP>
+            Realizei o sonho do Jardim Vertical e com certeza o Daniel foi fundamental neste processo, da visita ao pós venda.
+            Está tudo perfeito, como combinado
+            </DepoimentsP>
+            <DepoimentsIcon src={Aspas} />
+            <DepoimentsH2>Carolinna Spazzo, GO</DepoimentsH2>
+            <DepoimentsH5>Jardim Vertical</DepoimentsH5>
+          </DepoimentsCard>
+          <DepoimentsCard>
+            <DepoimentsP>
+              Daniel nos acompanhou desde o início das obras, sempre preocupado com praticidade, segurança e bem-estar da familia, consagrando uma estética ímpar ao meu jardim.
+            </DepoimentsP>
+            <DepoimentsIcon src={Aspas} />
+            <DepoimentsH2>Carlos Grande, MS</DepoimentsH2>
+            <DepoimentsH5>Paisagismo</DepoimentsH5>
+          </DepoimentsCard>
+        </DepoimentsWrapper>
+      </DepoimentsContainer>
+    </div>
   )
 }
 

@@ -79,6 +79,12 @@ export const CarouselBg = styled(Carousel)`
 export const ImgBg = styled.img`
   width: 100%;
   height: 100%;
+
+  @media screen and (max-width: 480px){
+    height: 100%;
+    width: auto;
+    overflow: hidden;
+  }
 `;
 
 
@@ -124,6 +130,7 @@ export const CarouselContent = styled.div`
 
 export const CarouselH1 = styled.h1`
   color: #fff;font-size: 48px;
+  text-shadow: 5px 5px 10px  #000;
   text-align: center;
 
   @media screen and (max-width: 768px) {
