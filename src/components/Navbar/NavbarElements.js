@@ -51,7 +51,20 @@ export const NavLogo = styled(LinkR)`
 `;
 
 export const ImgLogo = styled.img`
-  width: 100px;
+  height: 50px;
+
+  @media screen and (max-width: 920px) {
+    display: none;
+  }
+`;
+
+export const ImgLogoMobile = styled.img`
+  height: 50px;
+  display: none;
+
+  @media screen and (max-width: 920px) {
+    display: block;
+  }
 `;
 
 export const MobileIcon = styled.div`

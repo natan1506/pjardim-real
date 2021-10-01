@@ -1,7 +1,7 @@
 import React from 'react';
 import { animateScroll as scroll } from 'react-scroll';
 
-import Logo from  '../../images/logo-white.png';
+import Logo from  '../../images/logo-escrita-white.png';
 import { 
   FooterContainer, 
   FooterWrapper, 

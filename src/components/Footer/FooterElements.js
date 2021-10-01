@@ -91,6 +91,10 @@ export const SocialLogo = styled(Link)`
   display: flex;
   align-items: center;
   font-weight: bold;
+
+  @media screen and (max-width: 820px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const WebsiteRights = styled.small`
@@ -110,5 +114,5 @@ export const SocialIconLink = styled.a`
 `;
 
 export const ImgLogo = styled.img`
-  width: 100px;
+  height: 50px;
 `;

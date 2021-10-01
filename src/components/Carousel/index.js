@@ -88,7 +88,7 @@ function Carousel() {
       )
     }
       <CarouselContent>
-        <CarouselH1>Projetos personalizado <br /> em até 24h</CarouselH1>
+        <CarouselH1>Projetos personalizados <br /> em até 24h</CarouselH1>
         <CarouselBtnWrapper>
           <Button
             to="quotation"
