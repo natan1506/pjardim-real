@@ -1,5 +1,7 @@
 import React from 'react';
 import { animateScroll as scroll } from 'react-scroll';
+
+import Logo from  '../../images/logo-white.png';
 import { 
   FooterContainer, 
   FooterWrapper, 
@@ -7,6 +9,7 @@ import {
   SocialMediaWrap,
   SocialLogo,
   WebsiteRights,
+  ImgLogo
 } from './FooterElements';
 
 function Footer() {
@@ -21,7 +24,7 @@ function Footer() {
         <SocialMedia>
           <SocialMediaWrap>
             <SocialLogo to='/' onClick={toggleHome}>
-              logo
+              <ImgLogo src={Logo} alt="Logo jardim real" />
             </SocialLogo>
             <WebsiteRights>Natan Souza © {new Date().getFullYear()} All rights reserved.</WebsiteRights>
           </SocialMediaWrap>

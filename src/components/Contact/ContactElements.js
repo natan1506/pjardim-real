@@ -28,14 +28,16 @@ export const ContactWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
-  grid-gap: 16px;
+  gap: 16px;
   padding: 0 50px;
 
   @media screen and (max-width: 1000px) {
-    grid-template-columns: 1fr ;
-    width: 100%;
     grid-gap: 0;
     padding: 0 10px;
+  }
+
+  @media screen and (max-width: 700px) {
+    grid-template-columns: 1fr;
   }
 
 `;
