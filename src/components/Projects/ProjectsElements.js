@@ -49,7 +49,7 @@ export const ProjectsH1 = styled.h1`
   font-size: 2.5rem;
   color: #010606;
   margin: 64px 0;
-
+  text-shadow: 1px 1px 2px  #000;
   @media screen and (max-width: 480px) {
     font-size: 2rem;
   }

@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import { Button } from '../ButtonElement';
-import ImgBgMobile from '../../images/img3.jpeg';
+import ImgBgMobile from '../../images/00003.png';
+import backgroundAbout from '../../images/bg-about.jpeg';
 
 import {
   CarouselContainer,
@@ -36,9 +37,11 @@ function Carousel() {
 
   const state = {
     items: [
-      { id: 1, img: require('../../images/img1.jpeg') },
-      { id: 2, img: require('../../images/img2.jpeg') },
-      { id: 3, img: require('../../images/img3.jpeg') },
+      { id: 1, img: require('../../images/00001.png') },
+      { id: 2, img: require('../../images/00002.png') },
+      { id: 3, img: require('../../images/00003.png') },
+      { id: 4, img: require('../../images/00004.png') },
+      { id: 5, img: require('../../images/00005.png') },
     ]
   }
 
@@ -60,16 +63,16 @@ function Carousel() {
   let resetTimeout;
 
   return (
-    <CarouselContainer id="home">
+    <CarouselContainer id="home" backgroundImageCustom={backgroundAbout}>
       {size >= 768 ? (
         <CarouselBg
+          itemsToShow={1}
           ref={carouselRef}
           onPrevStart={onPrevStart}
           onNextStart={onNextStart}
           disableArrowsOnEnd={false}
           enableAutoPlay
           autoPlaySpeed={4000}
-          pagination={false}
           onNextEnd={({ index }) => {
             clearTimeout(resetTimeout)
             if (index + 1 === totalPages) {
@@ -79,7 +82,7 @@ function Carousel() {
             }
           }}
         >
-          {state.items.map(item => <CarouselItem key={item.id}><img src={item.img.default} alt={item.id} /></CarouselItem>)}
+          {state.items.map(item => <CarouselItem key={item.id} maxHeight="100%" src={item.img.default} alt={item.id} />)}
         </CarouselBg>
       )
       :

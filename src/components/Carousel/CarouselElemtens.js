@@ -4,6 +4,7 @@ import Carousel from 'react-elastic-carousel';
 
 export const CarouselContainer = styled.div`
   /* background: #0c0c0c; */
+  background: url(${props => props.backgroundImageCustom});
 
   display: flex;
   justify-content: center;
@@ -22,21 +23,24 @@ export const CarouselContainer = styled.div`
   }
 `;
 
-
 export const CarouselBg = styled(Carousel)`
+  height: 100%;
   position: absolute;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  /* width: 100%; */
-  height: 100%;
+  width: 100%;
   overflow: hidden;
-
 
   @media screen and (max-width: 768px) {
     top: 80px;
   }
+
+  .rec-carousel-item:focus {
+    height: 100%;
+  }
+
 
   .rec-carousel {
     position: relative;
@@ -45,6 +49,7 @@ export const CarouselBg = styled(Carousel)`
 
     .rec.rec-arrow {
       position: absolute;
+      background: #fff;
 
       &:hover, &:focus{
         background: #01bf71;
@@ -53,6 +58,7 @@ export const CarouselBg = styled(Carousel)`
 
     .rec-arrow-left{
       z-index: 999;
+      left: 5px;
     }
 
     .rec-arrow-right{
@@ -71,8 +77,10 @@ export const CarouselBg = styled(Carousel)`
     margin: 0;
   }
 
-  .rec-carousel-item:focus {
-    height: 100%;
+
+  .rec-dot_active {
+    background-color: #01bf71 ;
+    box-shadow: 0 0 1px 3px rgb(20 182 107);
   }
 `;
 
@@ -88,21 +96,13 @@ export const ImgBg = styled.img`
 `;
 
 
-export const CarouselItem = styled.div`
-  width: 100%;
-  height: 100%;
-
-  img {
-    min-width: 100%;
-    min-height: 844px;
-    overflow: hidden;
-  }
-
+export const CarouselItem = styled.img`
+  min-width: 100%;
+  height: 800px;
+  overflow: hidden;
 
   @media screen and (max-width: 768px) {
-    img {
-      overflow: hidden;
-    }
+    overflow: hidden;
   }
 
 `;
@@ -129,7 +129,8 @@ export const CarouselContent = styled.div`
 `;
 
 export const CarouselH1 = styled.h1`
-  color: #fff;font-size: 48px;
+  color: #fff;
+  font-size: 48px;
   text-shadow: 5px 5px 10px  #000;
   text-align: center;
 

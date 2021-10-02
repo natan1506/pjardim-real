@@ -21,8 +21,8 @@ const Contact = () => {
     <div id="contact">
       <ContactContainer backgroundImageCustom={backgroundAbout}>
         <ContactWrapper>
-          <ContactIcon src={Logo} />
-          <ContactIcon src={LogoDaniel} />
+          <a href="https://instagram.com/pjardimreal?utm_medium=copy_link" target="_blank"><ContactIcon src={Logo} /></a>
+          <a href="https://instagram.com/danielmourapaisagista?utm_medium=copy_link" target="_blank"><ContactIcon src={LogoDaniel} /></a>
         </ContactWrapper>
         <ContactH1>Siga-nos em nossas redes sociais.</ContactH1>
 
